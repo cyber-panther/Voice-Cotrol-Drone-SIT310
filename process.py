@@ -11,7 +11,6 @@ import pyttsx3
 
 responses = ""
 
-
 class Controller:
     def __init__(self):
         print("test")
@@ -62,7 +61,6 @@ movement = ["move", "go"]
 stunt = ["flip"]
 turn = ["turn", "rotate", "spin", "degree", "angle"]
 lift = ["take", "off"]
-
 
 def command(txt):
 
@@ -128,6 +126,7 @@ def command(txt):
                 distance = 50
             tello.send_command("back " + str(distance))
 
+    # Check if the word in stunt group is in the text
     elif any([x in txt for x in stunt]):
         if "left" in txt:
             tello.send_command("flip l")

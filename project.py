@@ -75,11 +75,12 @@ try:
         while True:
             data = q.get()
             if rec.AcceptWaveform(data):
+                value = rec.Result()
                 f = open("output.txt", "r+")
                 f.truncate(0)
-                f.write(rec.Result())
+                f.write(value)
                 f.close()
-                print(rec.Result())
+                print(value)
             # else:
                 # print(rec.PartialResult())
             if dump_fn is not None:
